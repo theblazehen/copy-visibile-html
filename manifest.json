@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Copy Visible HTML",
+  "version": "1.0.0",
+  "description": "Pick an element and copy its visible HTML, stripped and optimized for LLM ingestion",
+  "author": "blazelight.dev",
+  "homepage_url": "https://github.com/blazelight-dev/copy-visible-html",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "copy-visible-html@blazelight.dev",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  },
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "clipboardWrite"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "web_accessible_resources": [
+    "content/picker.css"
+  ]
+}

@@ -1,0 +1,272 @@
+/* Copy Visible HTML - Picker Styles */
+
+/* Highlight overlay */
+#cvh-highlight {
+  position: absolute;
+  pointer-events: none !important;
+  background: rgba(66, 133, 244, 0.15);
+  border: 2px solid rgba(66, 133, 244, 0.8);
+  border-radius: 2px;
+  z-index: 2147483646 !important;
+  display: none;
+  box-sizing: border-box;
+  transition: all 0.05s ease-out;
+}
+
+#cvh-highlight.cvh-highlight-locked {
+  background: rgba(66, 133, 244, 0.25);
+  border-color: rgba(66, 133, 244, 1);
+  border-width: 3px;
+}
+
+/* Panel */
+#cvh-panel {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 500px;
+  max-width: calc(100vw - 40px);
+  max-height: 60vh;
+  background: #1a1a2e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 2147483647;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  color: #e0e0e0;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#cvh-panel.cvh-panel-visible {
+  display: flex;
+}
+
+/* Panel header */
+.cvh-panel-header {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-bottom: 1px solid #333;
+  background: #16162a;
+  flex-shrink: 0;
+}
+
+/* Button styles */
+.cvh-btn {
+  padding: 6px 12px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: #2a2a4a;
+  color: #e0e0e0;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+.cvh-btn:hover {
+  background: #3a3a5a;
+  border-color: #555;
+}
+
+.cvh-btn:active {
+  background: #4a4a6a;
+}
+
+.cvh-btn-parent {
+  font-weight: 500;
+}
+
+.cvh-btn-group {
+  display: flex;
+  margin-left: auto;
+}
+
+.cvh-btn-group .cvh-btn {
+  border-radius: 0;
+}
+
+.cvh-btn-group .cvh-btn:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.cvh-btn-group .cvh-btn:last-child {
+  border-radius: 0 4px 4px 0;
+  border-left: none;
+}
+
+.cvh-btn-mode.cvh-btn-active {
+  background: #4285f4;
+  border-color: #4285f4;
+  color: white;
+}
+
+.cvh-btn-copy {
+  background: #2e7d32;
+  border-color: #2e7d32;
+  color: white;
+}
+
+.cvh-btn-copy:hover {
+  background: #388e3c;
+  border-color: #388e3c;
+}
+
+.cvh-btn-cancel {
+  background: #c62828;
+  border-color: #c62828;
+  color: white;
+}
+
+.cvh-btn-cancel:hover {
+  background: #d32f2f;
+  border-color: #d32f2f;
+}
+
+/* Panel info bar */
+.cvh-panel-info {
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #888;
+  background: #1e1e3a;
+  border-bottom: 1px solid #333;
+  flex-shrink: 0;
+}
+
+/* Preview area */
+.cvh-panel-preview {
+  flex: 1;
+  overflow: auto;
+  min-height: 120px;
+  max-height: 400px;
+  background: #0d0d1a;
+  padding: 12px;
+}
+
+.cvh-panel-preview .cvh-code {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Interactive HTML tree styles */
+.cvh-panel-preview.cvh-interactive .cvh-code {
+  color: #ccc;
+}
+
+.cvh-tag {
+  color: #569cd6;
+}
+
+.cvh-tag-clickable {
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.1s ease;
+}
+
+.cvh-tag-clickable:hover,
+.cvh-tag-hover {
+  background: rgba(66, 133, 244, 0.3);
+  color: #7ec8ff;
+}
+
+.cvh-attr-name {
+  color: #9cdcfe;
+}
+
+.cvh-attr-value {
+  color: #ce9178;
+}
+
+.cvh-text {
+  color: #d4d4d4;
+  opacity: 0.8;
+}
+
+.cvh-collapse {
+  cursor: pointer;
+  color: #666;
+  margin-right: 4px;
+  font-size: 10px;
+  user-select: none;
+  display: inline-block;
+  width: 12px;
+  text-align: center;
+  transition: color 0.1s ease;
+}
+
+.cvh-collapse:hover {
+  color: #4285f4;
+}
+
+.cvh-children {
+  /* inline by default, controlled by JS */
+}
+
+/* Text mode (non-interactive) */
+.cvh-panel-preview:not(.cvh-interactive) .cvh-code {
+  color: #a0d0a0;
+}
+
+/* Copied notification */
+.cvh-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  background: #2e7d32;
+  color: white;
+  border-radius: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 2147483647;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease;
+}
+
+.cvh-notification-fade {
+  opacity: 0;
+}
+
+/* Breadcrumb bar showing element hierarchy */
+#cvh-breadcrumb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 12px;
+  background: rgba(26, 26, 46, 0.95);
+  border-bottom: 2px solid #4285f4;
+  z-index: 2147483647;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 12px;
+  color: #e0e0e0;
+  display: none;
+  white-space: nowrap;
+  overflow-x: auto;
+  backdrop-filter: blur(4px);
+}
+
+.cvh-crumb {
+  color: #888;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.cvh-crumb-active {
+  background: #4285f4;
+  color: white;
+  font-weight: 500;
+}
+
+.cvh-crumb-sep {
+  color: #555;
+  margin: 0 4px;
+}
