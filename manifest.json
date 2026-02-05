@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Pick an element and copy its visible HTML, stripped and optimized for LLM ingestion",
   "author": "blazelight.dev",
-  "homepage_url": "https://github.com/blazelight-dev/copy-visible-html",
+  "homepage_url": "https://github.com/theblazehen/copy-visibile-html",
   "browser_specific_settings": {
     "gecko": {
       "id": "copy-visible-html@blazelight.dev",
